@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useCardContext } from "../layout/CardProvider";
+import { useCardContext } from "../layout/TodoProvider";
 
 const FooterModal = ({ onOK, onCancel }) => {
   const { isEdit } = useCardContext();

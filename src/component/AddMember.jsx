@@ -1,7 +1,7 @@
 import { UserPlusIcon } from "@heroicons/react/24/solid";
 import { Button } from "@material-tailwind/react";
 import ModalAddMember from "./ModalAddMember";
-import { useCardContext } from "../layout/CardProvider";
+import { useCardContext } from "../layout/TodoProvider";
 
 const AddMember = () => {
   const { updateCardData, handleIsOpenModal } = useCardContext();

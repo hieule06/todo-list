@@ -1,13 +1,8 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
-import {
-  Chip,
-  IconButton,
-  Tooltip,
-  Typography
-} from "@material-tailwind/react";
+import { Chip, IconButton, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import "./CardBodyTable.scss";
-import { useCardContext } from "../layout/CardProvider";
+import { useCardContext } from "../TodoProvider";
 import dayjs from "dayjs";
 
 const CardBodyTable = () => {
@@ -173,22 +168,20 @@ const CardBodyTable = () => {
               </Typography>
             </td>
             <td className={classes}>
-              <Tooltip>
-                <IconButton className="wrapper-action flex" variant="text">
-                  <button
-                    className="mr-2 p-2 bg-white border-[1px] border-blue-500 text-blue-500 rounded-md hover:bg-blue-500 hover:text-white hover:border-blue-500"
-                    onClick={() => handleEditInfo(item)}
-                  >
-                    <PencilIcon className="inline-block h-4" />
-                  </button>
-                  <button
-                    className="p-2 bg-white border-[1px] border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white hover:border-red-500"
-                    onClick={() => handleDeleteMember(item.id)}
-                  >
-                    <TrashIcon className="inline-block h-4" />
-                  </button>
-                </IconButton>
-              </Tooltip>
+              <IconButton className="wrapper-action flex" variant="text">
+                <button
+                  className="mr-2 p-2 bg-white border-[1px] border-blue-500 text-blue-500 rounded-md hover:bg-blue-500 hover:text-white hover:border-blue-500"
+                  onClick={() => handleEditInfo(item)}
+                >
+                  <PencilIcon className="inline-block h-4" />
+                </button>
+                <button
+                  className="p-2 bg-white border-[1px] border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white hover:border-red-500"
+                  onClick={() => handleDeleteMember(item.id)}
+                >
+                  <TrashIcon className="inline-block h-4" />
+                </button>
+              </IconButton>
             </td>
           </tr>
         );

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CardContext = createContext();
 
-export const CardProvider = ({ children }) => {
+export const TodoProvider = ({ children }) => {
   const [cardData, setCardData] = useState({
     name: "",
     email: "",
@@ -43,7 +43,7 @@ export const CardProvider = ({ children }) => {
   );
 };
 
-CardProvider.propTypes = {
+TodoProvider.propTypes = {
   children: PropTypes.node.isRequired
 };
 

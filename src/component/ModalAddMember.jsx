@@ -2,7 +2,7 @@ import { DatePicker, Modal } from "antd";
 import PropTypes from "prop-types";
 import FooterModal from "./FooterModal";
 import { useEffect, useState } from "react";
-import { useCardContext } from "../layout/CardProvider";
+import { useCardContext } from "../layout/TodoProvider";
 import dayjs from "dayjs";
 
 const ModalAddMember = () => {
@@ -32,22 +32,15 @@ const ModalAddMember = () => {
   };
 
   const handleInputChange = (e) => {
-    if (e.file && e.file.type === "image/jpeg") {
-      setFormData({
-        ...formData,
-        img: e.file
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [e.target.id]:
-          e.target.value === "true"
-            ? true
-            : e.target.value === "false"
-            ? false
-            : e.target.value
-      });
-    }
+    setFormData({
+      ...formData,
+      [e.target.id]:
+        e.target.value === "true"
+          ? true
+          : e.target.value === "false"
+          ? false
+          : e.target.value
+    });
   };
 
   const handleOk = () => {

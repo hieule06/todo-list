@@ -1,7 +1,7 @@
 import { Card, CardBody } from "@material-tailwind/react";
-import HeaderTable from "../../component/HeaderTable";
-import CardBodyTable from "../../component/CardBodyTable";
-import AddMember from "../../component/AddMember";
+import HeaderTable from "../component/HeaderTable";
+import CardBodyTable from "./containter/CardBodyTable";
+import AddMember from "../component/AddMember";
 import React from "react";
 
 const ToDoList = () => {
