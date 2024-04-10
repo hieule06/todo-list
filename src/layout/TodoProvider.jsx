@@ -1,21 +1,20 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 
-const CardContext = createContext();
+const ToDoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
-  const [cardData, setCardData] = useState({
+  const defaultObj = {
     name: "",
     email: "",
     job: "",
     status: true,
-    date: null,
-    img: null
-  });
-  const [isEdit, setIsEdit] = useState(false);
+    date: null
+  };
+  const [cardData, setCardData] = useState(defaultObj);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const updateCardData = (newData) => {
+  const handleUpdateCardData = (newData) => {
     setCardData(newData);
   };
 
@@ -23,23 +22,17 @@ export const TodoProvider = ({ children }) => {
     setIsOpenModal((prev) => !prev);
   };
 
-  const handleIsEdit = (prev) => {
-    setIsEdit(prev);
-  };
-
   return (
-    <CardContext.Provider
+    <ToDoContext.Provider
       value={{
         cardData,
-        updateCardData,
+        handleUpdateCardData,
         isOpenModal,
-        handleIsOpenModal,
-        isEdit,
-        handleIsEdit
+        handleIsOpenModal
       }}
     >
       {children}
-    </CardContext.Provider>
+    </ToDoContext.Provider>
   );
 };
 
@@ -47,6 +40,6 @@ TodoProvider.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export const useCardContext = () => {
-  return useContext(CardContext);
+export const useToDoContext = () => {
+  return useContext(ToDoContext);
 };

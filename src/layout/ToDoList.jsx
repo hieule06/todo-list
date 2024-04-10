@@ -1,7 +1,7 @@
 import { Card, CardBody } from "@material-tailwind/react";
-import HeaderTable from "../component/HeaderTable";
-import CardBodyTable from "./containter/CardBodyTable";
-import AddMember from "../component/AddMember";
+import HeaderTable from "./containter/component/ToDoHeader";
+import ToDoContainer from "./containter/ToDoContainer";
+import AddMember from "./containter/component/AddMember";
 import React from "react";
 
 const ToDoList = () => {
@@ -12,7 +12,7 @@ const ToDoList = () => {
         <CardBody className="px-0">
           <table className="mt-4 w-full min-w-max table-auto text-left">
             <HeaderTable></HeaderTable>
-            <CardBodyTable></CardBodyTable>
+            <ToDoContainer></ToDoContainer>
           </table>
         </CardBody>
       </Card>

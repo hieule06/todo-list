@@ -1,13 +1,12 @@
 import { UserPlusIcon } from "@heroicons/react/24/solid";
 import { Button } from "@material-tailwind/react";
-import ModalAddMember from "./ModalAddMember";
-import { useCardContext } from "../layout/TodoProvider";
+import { useToDoContext } from "../../TodoProvider";
 
 const AddMember = () => {
-  const { updateCardData, handleIsOpenModal } = useCardContext();
+  const { handleUpdateCardData, handleIsOpenModal } = useToDoContext();
 
   const handleOpenModal = () => {
-    updateCardData({});
+    handleUpdateCardData({});
     handleIsOpenModal();
   };
 
@@ -20,7 +19,6 @@ const AddMember = () => {
       >
         <UserPlusIcon strokeWidth={2} className="h-6 w-6" /> Add member
       </Button>
-      <ModalAddMember></ModalAddMember>
     </div>
   );
 };
